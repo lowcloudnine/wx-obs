@@ -11,4 +11,4 @@ pyinstaller gui/main.py \
     --onefile \
     --name wxobs
 ```
-git 
+ 
