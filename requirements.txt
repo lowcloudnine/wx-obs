@@ -1,0 +1,9 @@
+# Wx Obs Required Libraries
+# -------------------------
+
+# ---- For getting observations
+requests>=2.22.0
+
+# ---- For the GUI
+PyQt5>=5.13.0
+PyInstaller>=3.5
