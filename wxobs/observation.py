@@ -40,13 +40,15 @@ class Observation:
         self.station = station
         self.ob = self.get_ob()
 
-    def get_ob(self):
-        response = requests.get(
-            "https://api.weather.gov/stations/" +
-            f"{self.station}/observations/{self.ob_time}"
-        )
+    def get_ob(self, station=None, ob_time=None):
+        if station is None:
+            station = self.station
+        if ob_time is None:
+            ob_time = self.ob_time
 
-        return response.json()
+        return requests.get(
+            f"https://api.weather.gov/stations/{station}/observations/{ob_time}"
+        ).json()
 
     @property
     def raw(self):
